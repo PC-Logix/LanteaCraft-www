@@ -1,0 +1,74 @@
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: rgb(95, 99, 93); 
+	background-image: url("http://lanteacraft.pc-logix.com/wp-content/themes/bueno/images/main-bg.gif");
+	background-attachment: fixed;
+}
+
+#depth {
+	position: fixed;
+	z-index: -1;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 0;
+	background-image: url("top.png");
+	height: 64px;
+}
+
+#depth-titlebox {
+	margin-left: 66px;
+	margin-top: 8px;
+	color: white;
+	font-family: 'Arial', sans-serif;
+	text-shadow: 2px 1px #000000;
+}
+
+#orthograph {
+	margin-top: 67px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 850px;
+}
+
+#content {
+	background: white;
+	width: 100%;
+	margin-top: 8px;
+}
+
+#content h1 {
+	font-family: 'Arial', sans-serif;
+	font-size: 20px;
+	margin-top: 14px;
+	border-bottom: 1px solid rgb(255,127,12);
+}
+
+#content, #navigation, #footer {
+	box-shadow: 0px 0px 10px #111;
+}
+
+#content p {
+	margin: 3px;
+	margin-top: 10px;
+	margin-bottom:15px;
+}
+
+
+.massive-wrapper {
+	margin-left: 64px;
+}
+
+.massive {
+	font-size: 57px !important;
+}
+
+.massive-para {
+	font-size: 18px !important;
+}
