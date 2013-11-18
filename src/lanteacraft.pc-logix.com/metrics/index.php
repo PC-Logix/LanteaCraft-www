@@ -12,7 +12,7 @@
 <div id="orthograph">
 	<div id="content">
 		<div class="massive-wrapper">
-			<h1 class="massive-para">Data, glorious data!</h1>
+			<h1 class="massive-para">Usage Stats</h1>
 			<table style="width: 100%">
 				<tr><td><img src="graph-actbyday.php?wx=750&hx=400"></td></tr>
 				<tr><td><img src="graph-actbyversion.php?wx=750&hx=400"></td></tr>
