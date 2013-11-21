@@ -1,0 +1,89 @@
+/** Cores **/
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333;
+	background-color: #fff;
+}
+
+
+
+/** Navigation **/
+.nav-wrapper {
+	background-image: url("images/nav.png");
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	margin-top: 20px;
+	margin-bottom: -90px;
+}
+
+.nav-container {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.nav-row {
+	min-height: 16px;
+}
+
+/** Header block **/
+.banner {
+	max-height: 600px;
+	background-image: url("css/backdrop.png");
+}
+
+/** Content **/
+.container {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/** Size rules **/
+@media (min-width: 1200px) {
+	.nav-container, .container  { width: 1170px; }
+}
+
+@media(min-width:768px) and (max-width:979px) {
+	.nav-container, .container { width:768px; }
+}
+
+@media(min-width:980px) and (max-width:1199px) {
+	.nav-container, .container { width: 940px; }
+}
+
+/** Modals **/
+.helper-load {
+	width: 128px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 256;
+	margin-left: -64px;
+	margin-top: -72px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	background-color: white;
+	border: 1px solid #cccccc;
+	text-align: center;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	display: none;
+}
+
+/** Debugging **/
+.debugger {
+	display: none;
+	visibility: hidden;
+}
