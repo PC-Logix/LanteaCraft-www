@@ -4,15 +4,19 @@
 # isn't updated by itself, to prevent explosions;
 # you'll have to do a custom git pull & copy.
 
+if (ini_get("register_globals") == 1)
+	die("Herp derp, the server administrator doesn't understand why register_globals is bad.");
 
-# Range of legal addresses
 $rangeValid = array("192.30.252.0/22");
 $usrPath = "/home/sgcraft";
 $gitPath = $usrPath . "/site_git/LanteaCraft-www";
 $srcPath = $gitPath . "/src/lanteacraft.pc-logix.com/metrics";
 $dstPath = $usrPath . "/sgcraft.pc-logix.com";
+$flagUpdate = $dstPath . "/.update-running";
 $gitCmd = "git pull";
 $copyCmd = "cp -r " . $srcPath . " " . $dstPath . "";
+$touchCmd = "touch ";
+$deleteCmd = "rm ";
 
 function cidr_match($target, $crange) {
 	list($subnet, $mask) = explode('/', $crange);
@@ -31,6 +35,8 @@ foreach ($rangeValid as $key => $range) {
 if (!$hostValid)
 	die("Address " . $hostOf . " not a legal address!");
 
-$result = shell_exec("cd " . $gitPath . " && " . $gitCmd);
+$result = shell_exec($touchCmd . $flagUpdate);
+$result .= shell_exec("cd " . $gitPath . " && " . $gitCmd);
 $result .= shell_exec($copyCmd);
+$result .= shell_exec($deleteCmd . $flagUpdate);
 die("Success!");
