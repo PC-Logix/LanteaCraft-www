@@ -40,6 +40,7 @@ function exceptionHandler($exception) {
 }
 
 set_exception_handler('exceptionHandler');
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ob_start();
 $context = new Metrics($metrics_conf);
 $context->run();
