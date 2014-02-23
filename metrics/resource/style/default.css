@@ -57,6 +57,10 @@ h2 {
 	padding: 6px 2%;
 }
 
+#header img {
+	float: left;
+}
+
 #content {
 	position: relative;
 	margin: 0 0 0 2%;

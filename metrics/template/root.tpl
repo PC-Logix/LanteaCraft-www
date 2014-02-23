@@ -6,7 +6,7 @@
 	</head>
 <body>
 	<div id="header">
-		<h1><?=$this->heading?></h1>
+		<img src="resource/image/icon.png"> <h1><?=$this->heading?></h1>
 	</div>
 	<div id="nav">
 		<?php 
