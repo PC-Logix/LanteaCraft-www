@@ -14,16 +14,19 @@ class Metrics {
 	
 	public function __construct($varargContext) {
 		if ($varargContext == null)
-			throw new Exception("Can't __construct without cvarargContext param.");
+			throw new Exception("Can't __construct without varargContext param.");
 		self::$instance = $this;
-		$this->context_properties = $avarargContext;
+		$this->context_properties = $varargContext;
 	}
 	
 	public function run() {
 		$viewContext = null;
 		// todo: viewcontext as db_case
 		
-		$viewContext->run();
+		if ($viewContext !== null)
+			$viewContext->run();
+		else
+			throw new Exception("No View for this context!");
 	}
 	
 	public function getProperty($key) {
