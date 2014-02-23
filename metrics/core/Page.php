@@ -5,7 +5,7 @@ class Page {
 		$t = new View("root.tpl", array(
 			"heading" => "Test!",
 			"title" => "Dashboard"));
-		$t->items = array();
+		$t->items = array(new View("container.tpl"));
 		$t->render();
 	}
 }
