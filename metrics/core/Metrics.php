@@ -23,7 +23,7 @@ class Metrics {
 		$viewContext = null;
 		// todo: viewcontext as db_case
 		
-		$__testPage = new Page();
+		$__testPage = new PreparedView\DashboardView();
 		$viewContext = $__testPage;
 		
 		if ($viewContext !== null)
