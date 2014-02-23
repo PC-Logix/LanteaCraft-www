@@ -1,6 +1,6 @@
 <?php
 class View {
-	protected $template_base = "templates/";
+	protected $template_base = "template/";
 	protected $vars = array();
 	protected $template_label;
 	

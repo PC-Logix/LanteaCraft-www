@@ -23,6 +23,9 @@ class Metrics {
 		$viewContext = null;
 		// todo: viewcontext as db_case
 		
+		$__testPage = new Page();
+		$viewContext = $__testPage;
+		
 		if ($viewContext !== null)
 			$viewContext->run();
 		else
