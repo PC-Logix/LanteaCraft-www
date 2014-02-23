@@ -15,7 +15,7 @@ class Metrics {
 	public function __construct($varargContext) {
 		if ($varargContext == null)
 			throw new Exception("Can't __construct without cvarargContext param.");
-		self::$instance = this;
+		self::$instance = $this;
 		$this->context_properties = $avarargContext;
 	}
 	
