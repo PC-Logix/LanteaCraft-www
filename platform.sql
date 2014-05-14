@@ -2,6 +2,7 @@
 -- Compatible with mysql 5.0+
 -- AfterLifeLochie, 2014
 
+DROP TABLE IF EXISTS METRICS;
 DROP TABLE IF EXISTS SESSIONS;
 DROP TABLE IF EXISTS USERS;
 DROP TABLE IF EXISTS PRODUCTVIEWS;
@@ -11,6 +12,7 @@ DROP TABLE IF EXISTS COMPONENTS;
 DROP TABLE IF EXISTS PRODUCTVERSION;
 DROP TABLE IF EXISTS PRODUCTS;
 DROP TABLE IF EXISTS VIEWS;
+DROP TABLE IF EXISTS CLOAKS;
 
 -- CREATE USERS
 CREATE TABLE USERS (
@@ -106,6 +108,14 @@ CREATE TABLE METRICS (
 	PRIMARY KEY (METRICS_ID)
 );
 
+-- CREATE CLOAKS
+CREATE TABLE CLOAKS (
+	CAPE_USERNAME			VARCHAR(128) NOT NULL,
+	CAPE_URL				VARCHAR(512) NOT NULL,
+	CAPE_REASON				VARCHAR(512) NOT NULL,
+	PRIMARY KEY (CAPE_USERNAME)
+);
+
 -- CREATE SESSION-USER VIEW; do not allow the selection of
 -- fields which are protected.
 CREATE OR REPLACE DEFINER = CURRENT_USER SQL SECURITY INVOKER
@@ -127,3 +137,17 @@ CREATE OR REPLACE DEFINER = CURRENT_USER SQL SECURITY INVOKER
 		FROM VIEWELEMENTS
 		RIGHT OUTER JOIN COMPONENTS ON VIEWELEMENTS.COMPONENT_ID = COMPONENTS.COMPONENT_ID
 		LEFT OUTER JOIN VIEWS ON VIEWELEMENTS.VIEW_ID = VIEWS.VIEW_ID;
+
+-- POPULATE CLOAKS TABLE
+INSERT INTO CLOAKS (CAPE_USERNAME, CAPE_URL, CAPE_REASON) VALUES
+	('AfterLifeLochie', 'http://lanteacraft.com/api/cloaks/developer.png', 'developer'),
+	('NeoRavencroft', 'http://lanteacraft.com/api/cloaks/developer.png', 'developer'),
+	('MichiRavencroft', 'http://lanteacraft.com/api/cloaks/developer.png', 'developer'),
+	('DrakeBD', 'http://lanteacraft.com/api/cloaks/developer.png', 'developer'),
+	('CronosusCZ', 'http://lanteacraft.com/api/cloaks/contributor.png', 'cs_CZ editor'),
+	('iTimmyLP', 'http://lanteacraft.com/api/cloaks/contributor.png', 'de_DE editor'),
+	('iLucyLP', 'http://lanteacraft.com/api/cloaks/contributor.png', 'de_DE editor'),
+	('hunator', 'http://lanteacraft.com/api/cloaks/contributor.png', 'cs_CZ editor'),
+	('crafteverywhere', 'http://lanteacraft.com/api/cloaks/contributor.png', 'zh_CN editor'),
+	('madshammy', 'http://lanteacraft.com/api/cloaks/donator.png', 'donator'),
+	('Minerva_Long', 'http://lanteacraft.com/api/cloaks/donator.png', 'donator');
